@@ -16,13 +16,15 @@ public class BasketController {
     public BasketController(BasketServiceImpl basketService) {
         this.basketService = basketService;
     }
-@GetMapping("/add")
-    public String add(@RequestParam ("itemID")List <Integer> items) {
-      return basketService.add(items);
+
+    @GetMapping("/add")
+    public String add(@RequestParam("itemID") List<Integer> items) {
+        return basketService.add(items);
 
     }
+
     @GetMapping("/get")
-    public Collection<Integer> get () {
+    public Collection<Integer> get() {
         return basketService.get();
     }
 }
